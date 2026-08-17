@@ -1,0 +1,62 @@
+[
+  {
+    "name": "student_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Unique student identifier"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Full name"
+  },
+  {
+    "name": "email",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "University email"
+  },
+  {
+    "name": "major",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Declared major"
+  },
+  {
+    "name": "year",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Academic year (Freshman/Sophomore/Junior/Senior)"
+  },
+  {
+    "name": "gpa",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Current GPA (0.0 - 4.0)"
+  },
+  {
+    "name": "credits_completed",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Credits earned"
+  },
+  {
+    "name": "credits_attempted",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Credits enrolled"
+  },
+  {
+    "name": "enrollment_status",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Current enrollment status (active/withdrawn/graduated)"
+  },
+  {
+    "name": "advisor_id",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Assigned advisor reference"
+  }
+]

@@ -1,0 +1,30 @@
+# Google Agent Development Kit
+google-adk>=1.0.0
+
+# Google Cloud libraries
+google-cloud-aiplatform>=1.38.0
+google-cloud-bigquery>=3.12.0
+google-cloud-firestore>=2.13.0
+google-cloud-storage>=2.10.0
+google-cloud-secret-manager>=2.16.0
+google-cloud-discoveryengine>=0.11.0  # Gemini Enterprise Agent Platform (formerly Vertex AI)
+google-cloud-modelarmor>=0.1.0  # LLM security: prompt injection, PII, harmful content
+
+# Web framework (for local development)
+fastapi>=0.104.0
+uvicorn>=0.24.0
+
+# Data processing
+pandas>=2.1.0
+pyarrow>=14.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Observability
+agentops>=0.3.0
+
+# Utilities
+python-dotenv>=1.0.0
+pydantic>=2.5.0

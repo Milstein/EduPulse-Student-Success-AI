@@ -1,0 +1,6 @@
+student_id,first_name,last_name,email,enrollment_date,current_gpa,gpa_trend,attendance_rate,enrollment_status,credit_hours_completed,credit_hours_attempted,risk_score,risk_level,last_risk_assessment,advisor_id,department,major,classification,is_first_generation,is_transfer_student,housing_status,financial_aid_status,created_at,updated_at
+STU001,John,Smith,john.smith@university.edu,2024-08-20,3.2,stable,0.92,active,30,32,25,low,2026-01-15,ADV001,Computer Science,Computer Science,sophomore,FALSE,FALSE,on-campus,full,2024-08-20,2026-01-15
+STU002,Maria,Garcia,maria.garcia@university.edu,2024-08-20,2.8,declining,0.78,active,28,30,55,medium,2026-01-15,ADV001,Biology,Biology,sophomore,TRUE,FALSE,off-campus,full,2024-08-20,2026-01-15
+STU003,James,Johnson,james.johnson@university.edu,2024-08-20,1.9,declining,0.45,active,24,32,78,high,2026-01-15,ADV002,Engineering,Mechanical Engineering,sophomore,FALSE,TRUE,off-campus,partial,2024-08-20,2026-01-15
+STU004,Sarah,Williams,sarah.williams@university.edu,2025-01-10,3.8,improving,0.98,active,15,15,10,low,2026-01-15,ADV002,Arts,English,freshman,FALSE,FALSE,on-campus,full,2025-01-10,2026-01-15
+STU005,Michael,Brown,michael.brown@university.edu,2024-08-20,2.1,declining,0.60,active,26,30,68,high,2026-01-15,ADV003,Business,Business Administration,sophomore,TRUE,TRUE,commuter,partial,2024-08-20,2026-01-15

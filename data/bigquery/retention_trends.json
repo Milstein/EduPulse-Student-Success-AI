@@ -1,0 +1,142 @@
+[
+  {
+    "retention_rate": 0.92,
+    "enrolled_count": 680,
+    "withdrawn_count": 54,
+    "department": "All",
+    "semester": "2026-01"
+  },
+  {
+    "retention_rate": 0.9,
+    "enrolled_count": 675,
+    "withdrawn_count": 59,
+    "department": "All",
+    "semester": "2026-02"
+  },
+  {
+    "retention_rate": 0.88,
+    "enrolled_count": 668,
+    "withdrawn_count": 66,
+    "department": "All",
+    "semester": "2026-03"
+  },
+  {
+    "retention_rate": 0.86,
+    "enrolled_count": 660,
+    "withdrawn_count": 74,
+    "department": "All",
+    "semester": "2026-04"
+  },
+  {
+    "retention_rate": 0.85,
+    "enrolled_count": 655,
+    "withdrawn_count": 79,
+    "department": "All",
+    "semester": "2026-05"
+  },
+  {
+    "retention_rate": 0.94,
+    "enrolled_count": 115,
+    "withdrawn_count": 7,
+    "department": "Computer Science",
+    "semester": "2026-01"
+  },
+  {
+    "retention_rate": 0.93,
+    "enrolled_count": 114,
+    "withdrawn_count": 8,
+    "department": "Computer Science",
+    "semester": "2026-02"
+  },
+  {
+    "retention_rate": 0.91,
+    "enrolled_count": 112,
+    "withdrawn_count": 10,
+    "department": "Computer Science",
+    "semester": "2026-03"
+  },
+  {
+    "retention_rate": 0.95,
+    "enrolled_count": 175,
+    "withdrawn_count": 9,
+    "department": "Business",
+    "semester": "2026-01"
+  },
+  {
+    "retention_rate": 0.94,
+    "enrolled_count": 174,
+    "withdrawn_count": 10,
+    "department": "Business",
+    "semester": "2026-02"
+  },
+  {
+    "retention_rate": 0.93,
+    "enrolled_count": 173,
+    "withdrawn_count": 11,
+    "department": "Business",
+    "semester": "2026-03"
+  },
+  {
+    "retention_rate": 0.88,
+    "enrolled_count": 145,
+    "withdrawn_count": 17,
+    "department": "Engineering",
+    "semester": "2026-01"
+  },
+  {
+    "retention_rate": 0.86,
+    "enrolled_count": 143,
+    "withdrawn_count": 19,
+    "department": "Engineering",
+    "semester": "2026-02"
+  },
+  {
+    "retention_rate": 0.85,
+    "enrolled_count": 142,
+    "withdrawn_count": 20,
+    "department": "Engineering",
+    "semester": "2026-03"
+  },
+  {
+    "retention_rate": 0.96,
+    "enrolled_count": 88,
+    "withdrawn_count": 4,
+    "department": "Nursing",
+    "semester": "2026-01"
+  },
+  {
+    "retention_rate": 0.96,
+    "enrolled_count": 88,
+    "withdrawn_count": 4,
+    "department": "Nursing",
+    "semester": "2026-02"
+  },
+  {
+    "retention_rate": 0.95,
+    "enrolled_count": 87,
+    "withdrawn_count": 5,
+    "department": "Nursing",
+    "semester": "2026-03"
+  },
+  {
+    "retention_rate": 0.85,
+    "enrolled_count": 190,
+    "withdrawn_count": 28,
+    "department": "Liberal Arts",
+    "semester": "2026-01"
+  },
+  {
+    "retention_rate": 0.83,
+    "enrolled_count": 188,
+    "withdrawn_count": 30,
+    "department": "Liberal Arts",
+    "semester": "2026-02"
+  },
+  {
+    "retention_rate": 0.82,
+    "enrolled_count": 186,
+    "withdrawn_count": 32,
+    "department": "Liberal Arts",
+    "semester": "2026-03"
+  }
+]

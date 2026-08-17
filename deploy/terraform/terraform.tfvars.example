@@ -1,0 +1,16 @@
+# EduPulse Terraform Variables
+# Copy this file to terraform.tfvars and fill in values
+
+# Required
+project_id  = "your-gcp-project-id"
+github_repo = "your-org/your-repo"
+
+# Optional (defaults are fine for most deployments)
+# region                = "us-east1"
+# environment           = "development"
+# repository_name       = "edupulse"
+# service_account_name  = "edupulse-agent"
+# wif_pool_id           = "edupulse-gh-actions"
+# dataset_student       = "edupulse_student_data"
+# dataset_analytics     = "edupulse_analytics"
+# model_armor_template_id = "edupulse-model-armor-template"

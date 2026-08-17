@@ -1,0 +1,7 @@
+[
+  {"alert_id": "ALT001", "student_id": "STU001", "alert_type": "risk", "severity": "critical", "title": "Academic Probation Risk", "description": "GPA dropped below 2.0 threshold", "created_at": "2026-07-20T14:30:00Z", "status": "active"},
+  {"alert_id": "ALT002", "student_id": "STU001", "alert_type": "behavior", "severity": "high", "title": "LMS Activity Decline", "description": "Login frequency dropped 60% in past 2 weeks", "created_at": "2026-07-19T09:00:00Z", "status": "active"},
+  {"alert_id": "ALT003", "student_id": "STU005", "alert_type": "risk", "severity": "critical", "title": "Immediate Intervention Required", "description": "GPA critically low, no LMS activity, tuition past due", "created_at": "2026-07-18T09:00:00Z", "status": "active"},
+  {"alert_id": "ALT004", "student_id": "STU003", "alert_type": "academic", "severity": "high", "title": "Course Failure Risk", "description": "Failed 3 courses last semester, work-study conflict", "created_at": "2026-07-15T12:00:00Z", "status": "active"},
+  {"alert_id": "ALT005", "student_id": "STU006", "alert_type": "behavior", "severity": "medium", "title": "Attendance Decline", "description": "Attendance dropped after spring break", "created_at": "2026-07-10T10:00:00Z", "status": "acknowledged"}
+]

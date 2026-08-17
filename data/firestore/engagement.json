@@ -1,0 +1,12 @@
+[
+  {"student_id": "STU001", "timestamp": "2026-07-20T14:30:00Z", "activity_type": "lms_login", "source": "lms", "session_duration_minutes": 15, "pages_viewed": 3, "resources_accessed": 1},
+  {"student_id": "STU001", "timestamp": "2026-07-19T09:15:00Z", "activity_type": "lms_login", "source": "lms", "session_duration_minutes": 8, "pages_viewed": 2, "resources_accessed": 0},
+  {"student_id": "STU001", "timestamp": "2026-07-15T16:45:00Z", "activity_type": "assignment_submission", "source": "lms", "submission_status": "late", "submission_quality": "poor"},
+  {"student_id": "STU002", "timestamp": "2026-07-20T10:00:00Z", "activity_type": "lms_login", "source": "lms", "session_duration_minutes": 45, "pages_viewed": 12, "resources_accessed": 5},
+  {"student_id": "STU002", "timestamp": "2026-07-20T08:30:00Z", "activity_type": "assignment_submission", "source": "lms", "submission_status": "on_time", "submission_quality": "excellent"},
+  {"student_id": "STU003", "timestamp": "2026-07-20T11:00:00Z", "activity_type": "lms_login", "source": "lms", "session_duration_minutes": 20, "pages_viewed": 5, "resources_accessed": 2},
+  {"student_id": "STU003", "timestamp": "2026-07-10T14:00:00Z", "activity_type": "tutoring_session", "source": "tutoring", "subject": "Physics", "duration_minutes": 60, "helpful": true},
+  {"student_id": "STU005", "timestamp": "2026-07-18T09:00:00Z", "activity_type": "lms_login", "source": "lms", "session_duration_minutes": 3, "pages_viewed": 1, "resources_accessed": 0},
+  {"student_id": "STU006", "timestamp": "2026-07-20T15:00:00Z", "activity_type": "lms_login", "source": "lms", "session_duration_minutes": 30, "pages_viewed": 8, "resources_accessed": 3},
+  {"student_id": "STU006", "timestamp": "2026-07-19T10:00:00Z", "activity_type": "office_hours", "source": "advising", "topic": "Organic Chemistry help", "duration_minutes": 20}
+]

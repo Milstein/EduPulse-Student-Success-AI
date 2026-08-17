@@ -1,0 +1,8 @@
+[
+  {"student_id": "STU001", "name": "Marcus Johnson", "email": "marcus.j@university.edu", "major": "Computer Science", "year": "Sophomore", "gpa": 1.8, "credits_completed": 45, "credits_attempted": 54, "enrollment_status": "active", "advisor_id": "ADV001"},
+  {"student_id": "STU002", "name": "Priya Patel", "email": "priya.p@university.edu", "major": "Business", "year": "Junior", "gpa": 3.4, "credits_completed": 78, "credits_attempted": 81, "enrollment_status": "active", "advisor_id": "ADV001"},
+  {"student_id": "STU003", "name": "Jordan Williams", "email": "jordan.w@university.edu", "major": "Engineering", "year": "Sophomore", "gpa": 2.1, "credits_completed": 30, "credits_attempted": 42, "enrollment_status": "active", "advisor_id": "ADV001"},
+  {"student_id": "STU004", "name": "Sofia Rodriguez", "email": "sofia.r@university.edu", "major": "Nursing", "year": "Senior", "gpa": 3.8, "credits_completed": 96, "credits_attempted": 96, "enrollment_status": "active", "advisor_id": "ADV002"},
+  {"student_id": "STU005", "name": "DeShawn Carter", "email": "deshawn.c@university.edu", "major": "Liberal Arts", "year": "Freshman", "gpa": 0.9, "credits_completed": 12, "credits_attempted": 30, "enrollment_status": "active", "advisor_id": "ADV002"},
+  {"student_id": "STU006", "name": "Emily Chen", "email": "emily.c@university.edu", "major": "Computer Science", "year": "Junior", "gpa": 2.7, "credits_completed": 60, "credits_attempted": 63, "enrollment_status": "active", "advisor_id": "ADV001"}
+]

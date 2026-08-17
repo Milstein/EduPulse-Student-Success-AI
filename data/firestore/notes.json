@@ -1,0 +1,5 @@
+[
+  {"note_id": "NT001", "student_id": "STU001", "advisor_id": "ADV001", "timestamp": "2026-07-20T14:35:00Z", "category": "academic", "note": "Met with Marcus regarding failing grades. He acknowledged struggling with time management between work and classes. Referred to tutoring center and counseling services.", "follow_up_date": "2026-07-27", "follow_up_completed": false},
+  {"note_id": "NT002", "student_id": "STU003", "advisor_id": "ADV001", "timestamp": "2026-07-15T12:05:00Z", "category": "academic", "note": "Jordan's work schedule is causing missed classes. Discussed reducing course load and adjusting work hours. Will follow up with financial aid office.", "follow_up_date": "2026-07-22", "follow_up_completed": false},
+  {"note_id": "NT003", "student_id": "STU005", "advisor_id": "ADV002", "timestamp": "2026-07-18T09:05:00Z", "category": "wellness", "note": "DeShawn is in crisis - multiple risk factors including housing insecurity and mental health concerns. Immediate escalation to Dean of Students and emergency financial aid.", "follow_up_date": "2026-07-19", "follow_up_completed": false}
+]

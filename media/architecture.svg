@@ -1,0 +1,501 @@
+<?xml version="1.0"?>
+<svg width="1248" height="720" viewBox="0 0 1248 720" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+
+    .title { font-family: Inter, sans-serif; font-size: 30px; font-weight: 700; fill: #4f46e5; }
+    .subtitle { font-family: Inter, sans-serif; font-size: 16px; font-weight: 400; fill: #6b7280; }
+    .layer-label { font-family: Inter, sans-serif; font-size: 14px; font-weight: 600; fill: #374151; letter-spacing: 1px; text-transform: uppercase; }
+    .box-title { font-family: Inter, sans-serif; font-size: 16px; font-weight: 600; fill: #111827; }
+    .box-subtitle { font-family: Inter, sans-serif; font-size: 16px; fill: #6b7280; }
+    .box-detail { font-family: Inter, sans-serif; font-size: 14px; fill: #6b7280; }
+    .layer-text { font-family: Inter, sans-serif; font-size: 14px; font-weight: 600; fill: #374151; letter-spacing: 0.5px; }
+    .flow-label { font-family: Inter, sans-serif; font-size: 12px; fill: #6366f1; font-weight: 500; }
+    .query-text { font-family: Inter, sans-serif; font-size: 16px; fill: #1e40af; font-weight: 500; }
+    .output-title { font-family: Inter, sans-serif; font-size: 16px; font-weight: 600; fill: #059669; }
+    .output-detail { font-family: Inter, sans-serif; font-size: 14px; fill: #374151; }
+    .output-highlight { font-family: Inter, sans-serif; font-size: 14px; fill: #dc2626; font-weight: 500; }
+    .output-ok { font-family: Inter, sans-serif; font-size: 14px; fill: #059669; font-weight: 500; }
+
+    .flow-line {
+      fill: none;
+      stroke: #6366f1;
+      stroke-width: 2.5;
+      stroke-dasharray: 8 4;
+      animation: flowDash 1.5s linear infinite;
+    }
+    .flow-line-reverse {
+      fill: none;
+      stroke: #8b5cf6;
+      stroke-width: 2.5;
+      stroke-dasharray: 8 4;
+      animation: flowDashReverse 1.5s linear infinite;
+    }
+    .flow-line-slow {
+      fill: none;
+      stroke: #06b6d4;
+      stroke-width: 2.5;
+      stroke-dasharray: 6 4;
+      animation: flowDash 2s linear infinite;
+    }
+    .flow-line-green {
+      fill: none;
+      stroke: #10b981;
+      stroke-width: 2.5;
+      stroke-dasharray: 6 4;
+      animation: flowDash 1.8s linear infinite;
+    }
+    .flow-line-output {
+      fill: none;
+      stroke: #059669;
+      stroke-width: 2.5;
+      stroke-dasharray: 8 4;
+      animation: flowDash 1.2s linear infinite;
+    }
+    .flow-dot {
+      fill: #6366f1;
+      animation: flowPulse 2s ease-in-out infinite;
+    }
+    .flow-dot-cyan {
+      fill: #06b6d4;
+      animation: flowPulse 2.5s ease-in-out infinite;
+    }
+    .flow-dot-green {
+      fill: #10b981;
+      animation: flowPulse 2s ease-in-out infinite 0.5s;
+    }
+    .flow-dot-violet {
+      fill: #8b5cf6;
+      animation: flowPulse 2s ease-in-out infinite;
+    }
+    .flow-dot-output {
+      fill: #059669;
+      animation: flowPulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes flowDash {
+      to { stroke-dashoffset: -24; }
+    }
+    @keyframes flowDashReverse {
+      to { stroke-dashoffset: 24; }
+    }
+    @keyframes flowPulse {
+      0%, 100% { opacity: 0.4; r: 3; }
+      50% { opacity: 1; r: 5; }
+    }
+
+    .arrowhead-indigo { fill: #6366f1; }
+    .arrowhead-violet { fill: #8b5cf6; }
+    .arrowhead-cyan { fill: #06b6d4; }
+    .arrowhead-green { fill: #10b981; }
+    .arrowhead-output { fill: #059669; }
+
+    .pillar-badge { stroke: #ffffff; stroke-width: 2; }
+    .pillar-num { font-family: Inter, sans-serif; font-size: 13px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+  </style>
+
+  <marker id="arrow-indigo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" class="arrowhead-indigo" fill="#6366f1"/>
+  </marker>
+  <marker id="arrow-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" class="arrowhead-violet" fill="#8b5cf6"/>
+  </marker>
+  <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" class="arrowhead-cyan" fill="#06b6d4"/>
+  </marker>
+  <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" class="arrowhead-green" fill="#10b981"/>
+  </marker>
+  <marker id="arrow-output" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" class="arrowhead-output" fill="#059669"/>
+  </marker>
+  <marker id="arrow-cyan-sm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" class="arrowhead-cyan" fill="#06b6d4"/>
+  </marker>
+  <marker id="arrow-violet-sm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" class="arrowhead-violet" fill="#8b5cf6"/>
+  </marker>
+
+  <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+    <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/>
+  </filter>
+  <filter id="shadow-sm" x="-5%" y="-5%" width="110%" height="115%">
+    <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.06"/>
+  </filter>
+</defs>
+
+<!-- Background -->
+<rect width="1248" height="720" fill="#fafbfc" rx="0"/>
+
+<!-- Header -->
+<text x="624" y="23" text-anchor="middle" class="title">EduPulse — Student Success AI</text>
+<text x="624" y="43" text-anchor="middle" class="subtitle">Google Cloud · ADK Multi-Agent · FERPA-Compliant · CI/CD Automated</text>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ROW 1                                                       -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<!-- Client -->
+<rect x="1" y="54" width="139" height="150" rx="12" fill="#ffffff" filter="url(#shadow)" stroke="#e5e7eb" stroke-width="1"/>
+<text x="70" y="68" text-anchor="middle" class="layer-label">Client</text>
+<circle cx="70" cy="105" r="18" fill="#ede9fe" stroke="#6366f1" stroke-width="1.5"/>
+<circle cx="70" cy="100" r="6" fill="#6366f1"/>
+<path d="M58,115 Q70,125 82,115" stroke="#6366f1" stroke-width="1.5" fill="none"/>
+<text x="70" y="151" text-anchor="middle" class="box-subtitle">Students</text>
+<text x="70" y="168" text-anchor="middle" class="box-subtitle">Advisors</text>
+<text x="70" y="185" text-anchor="middle" class="box-subtitle">Admins</text>
+
+<!-- Security -->
+<rect x="176" y="54" width="316" height="150" rx="12" fill="#fef2f2" filter="url(#shadow)" stroke="#fecaca" stroke-width="1"/>
+<text x="334" y="69" text-anchor="middle" class="layer-label">Security Layer</text>
+
+<rect x="192" y="77" width="284" height="70" rx="8" fill="#ffffff" stroke="#fca5a5" stroke-width="1"/>
+<text x="334" y="95" text-anchor="middle" class="box-title">🛡 Model Armor</text>
+<text x="334" y="117" text-anchor="middle" class="box-detail">Prompt Injection · Jailbreaks · PII Leakage</text>
+<text x="334" y="137" text-anchor="middle" class="box-detail">Harmful Content · Malicious URLs</text>
+
+<rect x="192" y="155" width="84" height="40" rx="6" fill="#ffffff" stroke="#fca5a5" stroke-width="0.8"/>
+<text x="234" y="172" text-anchor="middle" class="box-title" style="font-size:13px;">WIF</text>
+<text x="234" y="186" text-anchor="middle" class="box-detail" style="font-size:12px;">OIDC Auth</text>
+
+<rect x="292" y="155" width="84" height="40" rx="6" fill="#ffffff" stroke="#fca5a5" stroke-width="0.8"/>
+<text x="334" y="172" text-anchor="middle" class="box-title" style="font-size:13px;">IAM</text>
+<text x="334" y="186" text-anchor="middle" class="box-detail" style="font-size:12px;">Service Accts</text>
+
+<rect x="392" y="155" width="84" height="40" rx="6" fill="#ffffff" stroke="#fca5a5" stroke-width="0.8"/>
+<text x="434" y="172" text-anchor="middle" class="box-title" style="font-size:13px;">Secret</text>
+<text x="434" y="186" text-anchor="middle" class="box-detail" style="font-size:12px; font-weight:600;">Manager</text>
+
+<!-- AI Agent Layer -->
+<rect x="528" y="54" width="719" height="150" rx="12" fill="#f0f9ff" filter="url(#shadow)" stroke="#bae6fd" stroke-width="1"/>
+<text x="888" y="69" text-anchor="middle" class="layer-label">AI Agent Layer — ADK Multi-Agent</text>
+
+<rect x="549" y="77" width="144" height="118" rx="8" fill="#ffffff" stroke="#7dd3fc" stroke-width="1"/>
+<text x="621" y="98" text-anchor="middle" class="box-title">Root Agent</text>
+<text x="621" y="114" text-anchor="middle" class="box-detail">Orchestrator</text>
+<line x1="561" y1="122" x2="681" y2="122" stroke="#e0e7ff" stroke-width="0.5"/>
+<text x="621" y="138" text-anchor="middle" class="box-detail">Routes queries</text>
+<text x="621" y="154" text-anchor="middle" class="box-detail">to sub-agents</text>
+
+<rect x="714" y="77" width="332" height="118" rx="8" fill="#ffffff" stroke="#7dd3fc" stroke-width="1"/>
+<text x="880" y="98" text-anchor="middle" class="box-title">Sub-Agents</text>
+<line x1="726" y1="108" x2="1034" y2="108" stroke="#e0e7ff" stroke-width="0.5"/>
+
+<rect x="728" y="118" width="44" height="26" rx="13" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.5"/>
+<text x="750" y="135" text-anchor="middle" class="box-detail" style="fill:#1e40af; font-size:12px;">Student</text>
+
+<rect x="780" y="118" width="44" height="26" rx="13" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.5"/>
+<text x="802" y="135" text-anchor="middle" class="box-detail" style="fill:#1e40af; font-size:12px;">Risk</text>
+
+<rect x="832" y="118" width="44" height="26" rx="13" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.5"/>
+<text x="854" y="135" text-anchor="middle" class="box-detail" style="fill:#1e40af; font-size:12px;">Course</text>
+
+<rect x="884" y="118" width="44" height="26" rx="13" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.5"/>
+<text x="906" y="135" text-anchor="middle" class="box-detail" style="fill:#1e40af; font-size:12px;">FinAid</text>
+
+<rect x="936" y="118" width="44" height="26" rx="13" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.5"/>
+<text x="958" y="135" text-anchor="middle" class="box-detail" style="fill:#1e40af; font-size:12px;">Advisor</text>
+
+<rect x="988" y="118" width="44" height="26" rx="13" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.5"/>
+<text x="1010" y="135" text-anchor="middle" class="box-detail" style="fill:#1e40af; font-size:12px;">Admin</text>
+
+<line x1="726" y1="154" x2="1034" y2="154" stroke="#e0e7ff" stroke-width="0.5"/>
+<text x="880" y="172" text-anchor="middle" class="box-detail">Six specialized sub-agents</text>
+<text x="880" y="186" text-anchor="middle" class="box-detail">Each wrapped via AgentTool</text>
+
+<rect x="1067" y="77" width="160" height="118" rx="10" fill="#ffffff" stroke="#c4b5fd" stroke-width="1" filter="url(#shadow-sm)"/>
+<text x="1147" y="98" text-anchor="middle" class="box-title" style="fill:#7c3aed;">Gemini</text>
+<text x="1147" y="116" text-anchor="middle" class="box-title" style="fill:#7c3aed;">3.5 Flash Lite</text>
+<line x1="1079" y1="124" x2="1215" y2="124" stroke="#e0e7ff" stroke-width="0.5"/>
+<text x="1147" y="140" text-anchor="middle" class="box-detail">Vertex AI</text>
+<text x="1147" y="156" text-anchor="middle" class="box-detail">Foundational Model</text>
+<text x="1147" y="172" text-anchor="middle" class="box-detail">LLM Backend</text>
+<text x="1147" y="188" text-anchor="middle" class="box-detail">Low Cost &amp; Latency</text>
+
+<!-- Row 1 flow arrows -->
+<path d="M140,115.5 L176,115.5" class="flow-line" marker-end="url(#arrow-indigo)"/>
+
+<path d="M492,115.5 L528,115.5" class="flow-line" marker-end="url(#arrow-indigo)"/>
+
+<path d="M693,136 L714,136" class="flow-line" marker-end="url(#arrow-indigo)"/>
+
+<path d="M1046,130 L1067,130" class="flow-line" marker-end="url(#arrow-indigo)"/>
+
+<path d="M1067,142 L1046,142" class="flow-line-reverse" marker-end="url(#arrow-violet)"/>
+
+<path d="M528,142.5 L492,142.5" class="flow-line-reverse" marker-end="url(#arrow-violet)"/>
+
+<path d="M176,142.5 L140,142.5" class="flow-line-output" marker-end="url(#arrow-output)"/>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ROW 2                                                       -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<!-- Compute -->
+<rect x="1" y="236" width="223" height="180" rx="12" fill="#f0fdf4" filter="url(#shadow)" stroke="#bbf7d0" stroke-width="1"/>
+<text x="112" y="254" text-anchor="middle" class="layer-label">Compute</text>
+
+<rect x="15" y="262" width="196" height="126" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1"/>
+<text x="112" y="282" text-anchor="middle" class="box-title">☁ Cloud Run</text>
+<text x="112" y="302" text-anchor="middle" class="box-detail">ADK Web · Agent Container</text>
+<text x="112" y="318" text-anchor="middle" class="box-detail">Auto-scale 0–10 instances</text>
+<line x1="25" y1="330" x2="201" y2="330" stroke="#86efac" stroke-width="0.5"/>
+<text x="112" y="356" text-anchor="middle" class="box-detail" style="font-weight:600; fill:#065f46;">Serverless · Scale to Zero</text>
+
+<!-- Data -->
+<rect x="260" y="236" width="328" height="180" rx="12" fill="#fffbeb" filter="url(#shadow)" stroke="#fde68a" stroke-width="1"/>
+<text x="424" y="254" text-anchor="middle" class="layer-label">Data Layer</text>
+
+<rect x="274" y="262" width="112" height="80" rx="8" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+<text x="330" y="279" text-anchor="middle" class="box-title">BigQuery</text>
+<line x1="284" y1="287" x2="376" y2="287" stroke="#fef3c7" stroke-width="0.5"/>
+<text x="330" y="302" text-anchor="middle" class="box-detail">Student Data</text>
+<text x="330" y="318" text-anchor="middle" class="box-detail">Risk Scores</text>
+<text x="330" y="334" text-anchor="middle" class="box-detail">Analytics</text>
+
+<rect x="398" y="262" width="176" height="80" rx="8" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+<text x="486" y="279" text-anchor="middle" class="box-title">Firestore</text>
+<line x1="408" y1="287" x2="564" y2="287" stroke="#fef3c7" stroke-width="0.5"/>
+<text x="486" y="302" text-anchor="middle" class="box-detail">Real-time Engagement</text>
+<text x="486" y="318" text-anchor="middle" class="box-detail">Session State</text>
+<text x="486" y="334" text-anchor="middle" class="box-detail">Live Alerts</text>
+
+<rect x="274" y="365" width="300" height="42" rx="8" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+<text x="424" y="383" text-anchor="middle" class="box-title">📦 Artifact Registry</text>
+<text x="424" y="399" text-anchor="middle" class="box-detail">Docker Images</text>
+
+<!-- CI/CD -->
+<rect x="604" y="236" width="384" height="180" rx="12" fill="#faf5ff" filter="url(#shadow)" stroke="#e9d5ff" stroke-width="1"/>
+<text x="796" y="254" text-anchor="middle" class="layer-label">CI/CD Pipeline</text>
+
+<rect x="618" y="262" width="92" height="58" rx="8" fill="#ffffff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="664" y="282" text-anchor="middle" class="box-title" style="font-size:14px;">GitHub</text>
+<text x="664" y="298" text-anchor="middle" class="box-title" style="font-size:14px;">Actions</text>
+<text x="664" y="314" text-anchor="middle" class="box-detail" style="font-size:12px;">Trigger &amp; Test</text>
+
+<rect x="750" y="262" width="92" height="58" rx="8" fill="#ffffff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="796" y="282" text-anchor="middle" class="box-title" style="font-size:14px;">Terraform</text>
+<text x="796" y="298" text-anchor="middle" class="box-detail" style="font-size:12px;">Infrastructure</text>
+<text x="796" y="314" text-anchor="middle" class="box-detail" style="font-size:12px;">as Code</text>
+
+<rect x="882" y="262" width="92" height="58" rx="8" fill="#ffffff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="928" y="282" text-anchor="middle" class="box-title" style="font-size:14px;">🔨 Cloud</text>
+<text x="928" y="298" text-anchor="middle" class="box-title" style="font-size:14px;">Build</text>
+<text x="928" y="314" text-anchor="middle" class="box-detail" style="font-size:12px;">Build &amp; Push</text>
+
+<path d="M710,291 L750,291" class="flow-line-slow" marker-end="url(#arrow-cyan)"/>
+<path d="M842,291 L882,291" class="flow-line-slow" marker-end="url(#arrow-cyan)"/>
+
+<rect x="618" y="364" width="356" height="42" rx="8" fill="#ffffff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="796" y="382" text-anchor="middle" class="box-title">🚀 Deploy: Cloud Run</text>
+<text x="796" y="398" text-anchor="middle" class="box-detail">Zero-downtime rollouts</text>
+
+<path d="M928,320 L928,349 L424,349 L424,365" class="flow-line-slow" marker-end="url(#arrow-cyan-sm)"/>
+<text x="668" y="343" text-anchor="middle" class="flow-label" style="fill:#06b6d4; font-size:12px;">push image</text>
+
+<path d="M928,320 L928,364" class="flow-line-slow" marker-end="url(#arrow-cyan-sm)"/>
+
+<path d="M796,406 L796,426 L112,426 L112,388" class="flow-line-slow" marker-end="url(#arrow-cyan-sm)"/>
+
+<!-- Observability -->
+<rect x="1004" y="236" width="243" height="180" rx="12" fill="#f8fafc" filter="url(#shadow)" stroke="#e2e8f0" stroke-width="1"/>
+<text x="1126" y="254" text-anchor="middle" class="layer-label">OBSERVABILITY</text>
+
+<rect x="1022" y="262" width="207" height="72" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="1126" y="284" text-anchor="middle" class="box-title">🔍 AgentOps</text>
+<text x="1126" y="300" text-anchor="middle" class="box-detail">Session Replays</text>
+<text x="1126" y="316" text-anchor="middle" class="box-detail">Token Tracking · Cost Analytics</text>
+
+<rect x="1022" y="342" width="207" height="68" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="1126" y="364" text-anchor="middle" class="box-title" style="font-size:13px;">Cloud Logging &amp; Monitoring</text>
+<text x="1126" y="380" text-anchor="middle" class="box-detail">Audit · Cloud Trace</text>
+<text x="1126" y="396" text-anchor="middle" class="box-detail">Dashboards · Alerts</text>
+
+<!-- Row 1 → Row 2 connectors -->
+<path d="M868,204 L868,219 L132,219 L132,236" class="flow-line" style="stroke:#06b6d4;" marker-end="url(#arrow-cyan-sm)"/>
+
+<path d="M92,236 L92,219 L908,219 L908,204" class="flow-line-reverse" style="stroke:#8b5cf6;" marker-end="url(#arrow-violet-sm)"/>
+
+<path d="M1125,204 L1125,236" class="flow-line-reverse" marker-end="url(#arrow-violet)"/>
+<text x="1130" y="222" text-anchor="start" class="flow-label" style="fill:#8b5cf6; font-size:10px;">telemetry</text>
+
+<!-- Row 2 flow arrows -->
+<path d="M224,314.5 L260,314.5" class="flow-line-green" marker-end="url(#arrow-green)"/>
+
+<path d="M260,337.5 L224,337.5" class="flow-line-reverse" marker-end="url(#arrow-violet)"/>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PILLAR BADGES (Layers 1–7)                                 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<g>
+  <circle cx="126" cy="68" r="13" class="pillar-badge" fill="#6366f1"/>
+  <text x="126" y="72.5" class="pillar-num">1</text>
+</g>
+<g>
+  <circle cx="478" cy="68" r="13" class="pillar-badge" fill="#ef4444"/>
+  <text x="478" y="72.5" class="pillar-num">2</text>
+</g>
+<g>
+  <circle cx="1233" cy="68" r="13" class="pillar-badge" fill="#0ea5e9"/>
+  <text x="1233" y="72.5" class="pillar-num">3</text>
+</g>
+<g>
+  <circle cx="210" cy="250" r="13" class="pillar-badge" fill="#10b981"/>
+  <text x="210" y="254.5" class="pillar-num">4</text>
+</g>
+<g>
+  <circle cx="574" cy="250" r="13" class="pillar-badge" fill="#f59e0b"/>
+  <text x="574" y="254.5" class="pillar-num">5</text>
+</g>
+<g>
+  <circle cx="974" cy="250" r="13" class="pillar-badge" fill="#8b5cf6"/>
+  <text x="974" y="254.5" class="pillar-num">6</text>
+</g>
+<g>
+  <circle cx="1233" cy="250" r="13" class="pillar-badge" fill="#64748b"/>
+  <text x="1233" y="254.5" class="pillar-num">7</text>
+</g>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ROW 3: QUERY → OUTPUT                                       -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<rect x="1" y="437" width="1246" height="262" rx="12" fill="#f0fdf4" filter="url(#shadow)" stroke="#bbf7d0" stroke-width="1"/>
+<text x="624" y="457" text-anchor="middle" class="layer-label">Query → Agent Processing → Output</text>
+
+<rect x="13" y="465" width="277" height="225" rx="10" fill="#ffffff" stroke="#86efac" stroke-width="1"/>
+<text x="151.5" y="489" text-anchor="middle" class="output-title" style="font-size:18px;">💬 User Query</text>
+<line x1="23" y1="499" x2="280" y2="499" stroke="#d1fae5" stroke-width="0.5"/>
+<text x="151.5" y="517" text-anchor="middle" class="query-text" style="font-weight:700; font-size:18px;">Why is student S1003</text>
+<text x="151.5" y="541" text-anchor="middle" class="query-text" style="font-weight:700; font-size:18px;">at risk this semester?</text>
+<line x1="23" y1="550" x2="280" y2="550" stroke="#d1fae5" stroke-width="0.5"/>
+<text x="151.5" y="565" text-anchor="middle" class="box-detail" style="font-size:15px;">Query enters via</text>
+<text x="151.5" y="589" text-anchor="middle" class="box-detail" style="font-size:15px;">Cloud Run FastAPI</text>
+<text x="151.5" y="613" text-anchor="middle" class="box-detail" style="fill:#6366f1; font-size:15px;">→ Model Armor scan</text>
+<text x="151.5" y="637" text-anchor="middle" class="box-detail" style="fill:#6366f1; font-size:15px;">→ Root Agent routes</text>
+<text x="151.5" y="661" text-anchor="middle" class="box-detail" style="fill:#6366f1; font-size:15px;">→ Risk Predictor</text>
+
+<rect x="328" y="465" width="277" height="225" rx="10" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+<text x="466.5" y="489" text-anchor="middle" class="output-title" style="font-size:18px;">⚙ Agent Processing</text>
+<line x1="338" y1="499" x2="595" y2="499" stroke="#dbeafe" stroke-width="0.5"/>
+<text x="466.5" y="513" text-anchor="middle" class="output-detail" style="font-weight:600; font-size:15px;">1. Risk Predictor Agent</text>
+<text x="466.5" y="537" text-anchor="middle" class="box-detail" style="font-size:15px;">  queries BigQuery risk_scores</text>
+<text x="466.5" y="561" text-anchor="middle" class="box-detail" style="fill:#dc2626; font-weight:700; font-size:15px;">  → Risk Level: HIGH (87%)</text>
+<text x="466.5" y="585" text-anchor="middle" class="output-detail" style="font-weight:600; font-size:15px;">2. Cross-references:</text>
+<text x="466.5" y="609" text-anchor="middle" class="box-detail" style="font-size:15px;">  • GPA trend (3.2 → 2.4)</text>
+<text x="466.5" y="633" text-anchor="middle" class="box-detail" style="font-size:15px;">  • Attendance (dropped to 62%)</text>
+<text x="466.5" y="657" text-anchor="middle" class="box-detail" style="font-size:15px;">  • 2 missing assignments</text>
+<text x="466.5" y="683" text-anchor="middle" class="box-detail" style="fill:#6366f1; font-weight:600; font-size:15px;">3. Gemini generates analysis</text>
+
+<rect x="643" y="465" width="277" height="225" rx="10" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+<text x="781.5" y="489" text-anchor="middle" class="output-title" style="font-size:18px;">📊 Structured Output</text>
+<line x1="653" y1="499" x2="920" y2="499" stroke="#fef3c7" stroke-width="0.5"/>
+<text x="781.5" y="513" text-anchor="middle" class="output-highlight" style="font-size:15px;">⚠ Risk Alert: HIGH (87%)</text>
+<text x="781.5" y="537" text-anchor="middle" class="output-detail" style="font-weight:600; font-size:15px;">Student: S1003 — Sarah Chen</text>
+<text x="781.5" y="561" text-anchor="middle" class="output-detail" style="font-size:15px;">Course: CS 301 — Data Structures</text>
+<text x="781.5" y="585" text-anchor="middle" class="box-detail" style="font-size:15px;">GPA: 3.2 → 2.4 | Attendance: 62%</text>
+<text x="781.5" y="609" text-anchor="middle" class="box-detail" style="font-size:15px;"><tspan fill="#dc2626" font-weight="700">Missing:</tspan> 2 assignments | Quiz: 58%</text>
+<line x1="653" y1="617" x2="920" y2="617" stroke="#fef3c7" stroke-width="0.5"/>
+<text x="781.5" y="633" text-anchor="middle" class="output-ok" style="font-size:15px;">✓ Recommendation:</text>
+<text x="781.5" y="657" text-anchor="middle" class="box-detail" style="font-size:15px;">Schedule advisor meeting</text>
+<text x="781.5" y="683" text-anchor="middle" class="box-detail" style="font-size:15px;">Enroll in tutoring (CS Lab)</text>
+
+<rect x="958" y="465" width="277" height="225" rx="10" fill="#ffffff" stroke="#c4b5fd" stroke-width="1"/>
+<text x="1096.5" y="489" text-anchor="middle" class="output-title" style="font-size:18px;">🤖 Agent Response</text>
+<line x1="968" y1="498" x2="1235" y2="498" stroke="#ede9fe" stroke-width="0.5"/>
+<text x="1096.5" y="513" text-anchor="middle" class="output-detail" style="fill:#1e40af; font-weight:500; font-size:15px;">Student S1003 (Sarah Chen) is</text>
+<text x="1096.5" y="537" text-anchor="middle" class="output-detail" style="fill:#1e40af; font-weight:500; font-size:15px;">HIGH risk (87%) in CS 301.</text>
+<line x1="968" y1="545" x2="1235" y2="545" stroke="#ede9fe" stroke-width="0.5"/>
+<text x="1096.5" y="561" text-anchor="middle" class="output-highlight" style="font-weight:700; font-size:15px;">Key factors:</text>
+<text x="1096.5" y="585" text-anchor="middle" class="output-detail" style="font-size:15px;">• GPA dropped 3.2 → 2.4 (25%)</text>
+<text x="1096.5" y="609" text-anchor="middle" class="output-detail" style="font-size:15px;">• Attendance fell to 62%</text>
+<text x="1096.5" y="633" text-anchor="middle" class="output-detail" style="font-size:15px;">• 2 missing assignments</text>
+<line x1="968" y1="641" x2="1235" y2="641" stroke="#ede9fe" stroke-width="0.5"/>
+<text x="1096.5" y="657" text-anchor="middle" class="output-ok" style="font-size:15px;">→ Alert created in Firestore</text>
+<text x="1096.5" y="681" text-anchor="middle" class="output-ok" style="font-size:15px;">→ Advisor notified</text>
+
+<path d="M290,577.5 L328,577.5" class="flow-line-output" marker-end="url(#arrow-output)"/>
+<path d="M605,577.5 L643,577.5" class="flow-line-output" marker-end="url(#arrow-output)"/>
+<path d="M920,577.5 L958,577.5" class="flow-line-output" marker-end="url(#arrow-output)"/>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ANIMATED FLOW DOTS                                         -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<circle r="3" class="flow-dot" cx="0" cy="0">
+  <animateMotion dur="2s" repeatCount="indefinite" path="M140,115.5 L176,115.5"/>
+</circle>
+<circle r="3" class="flow-dot" cx="0" cy="0">
+  <animateMotion dur="2s" repeatCount="indefinite" path="M492,115.5 L528,115.5"/>
+</circle>
+<circle r="3" class="flow-dot" cx="0" cy="0">
+  <animateMotion dur="2s" repeatCount="indefinite" path="M1046,130 L1067,130"/>
+</circle>
+<circle r="3" class="flow-dot-violet" cx="0" cy="0">
+  <animateMotion dur="2s" repeatCount="indefinite" path="M1067,142 L1046,142"/>
+</circle>
+<circle r="3" class="flow-dot-cyan" cx="0" cy="0">
+  <animateMotion dur="2.5s" repeatCount="indefinite" path="M868,204 L868,219 L132,219 L132,236"/>
+</circle>
+<circle r="3" class="flow-dot-violet" cx="0" cy="0">
+  <animateMotion dur="2.5s" repeatCount="indefinite" path="M92,236 L92,219 L908,219 L908,204"/>
+</circle>
+<circle r="3" class="flow-dot-violet" cx="0" cy="0">
+  <animateMotion dur="2.5s" repeatCount="indefinite" path="M1125,204 L1125,236"/>
+</circle>
+<circle r="3" class="flow-dot-green" cx="0" cy="0">
+  <animateMotion dur="2s" repeatCount="indefinite" path="M224,314.5 L260,314.5"/>
+</circle>
+<circle r="3" class="flow-dot-violet" cx="0" cy="0">
+  <animateMotion dur="2s" repeatCount="indefinite" path="M260,337.5 L224,337.5"/>
+</circle>
+<circle r="2" class="flow-dot-cyan" cx="0" cy="0">
+  <animateMotion dur="2s" repeatCount="indefinite" path="M928,320 L928,349 L424,349 L424,365"/>
+</circle>
+<circle r="2" class="flow-dot-cyan" cx="0" cy="0">
+  <animateMotion dur="1.5s" repeatCount="indefinite" path="M928,320 L928,364"/>
+</circle>
+<circle r="2" class="flow-dot-cyan" cx="0" cy="0">
+  <animateMotion dur="2s" repeatCount="indefinite" path="M796,406 L796,426 L112,426 L112,388"/>
+</circle>
+<circle r="2" class="flow-dot-cyan" cx="0" cy="0">
+  <animateMotion dur="1s" repeatCount="indefinite" path="M710,291 L750,291"/>
+</circle>
+<circle r="2" class="flow-dot-cyan" cx="0" cy="0">
+  <animateMotion dur="1s" repeatCount="indefinite" path="M842,291 L882,291"/>
+</circle>
+<circle r="3" class="flow-dot-violet" cx="0" cy="0">
+  <animateMotion dur="1.5s" repeatCount="indefinite" path="M528,142.5 L492,142.5"/>
+</circle>
+<circle r="3" class="flow-dot" cx="0" cy="0">
+  <animateMotion dur="2s" repeatCount="indefinite" path="M693,136 L714,136"/>
+</circle>
+<circle r="3" class="flow-dot-output" cx="0" cy="0">
+  <animateMotion dur="1.5s" repeatCount="indefinite" path="M176,142.5 L140,142.5"/>
+</circle>
+<circle r="3" class="flow-dot-output" cx="0" cy="0">
+  <animateMotion dur="1.5s" repeatCount="indefinite" path="M290,577.5 L328,577.5"/>
+</circle>
+<circle r="3" class="flow-dot-output" cx="0" cy="0">
+  <animateMotion dur="1.5s" repeatCount="indefinite" path="M605,577.5 L643,577.5"/>
+</circle>
+<circle r="3" class="flow-dot-output" cx="0" cy="0">
+  <animateMotion dur="1.5s" repeatCount="indefinite" path="M920,577.5 L958,577.5"/>
+</circle>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- LEGEND                                                      -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<rect x="1" y="700" width="1246" height="19" rx="9" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="164" y="714" text-anchor="start" class="layer-text" style="font-size:13px;">Flow Legend:</text>
+<line x1="259" y1="709" x2="294" y2="709" class="flow-line" style="stroke-width:2;"/>
+<text x="306" y="714" text-anchor="start" class="box-detail" style="font-size:13px;">Request</text>
+<line x1="409" y1="709" x2="444" y2="709" class="flow-line-reverse" style="stroke-width:2;"/>
+<text x="456" y="714" text-anchor="start" class="box-detail" style="font-size:13px;">Response</text>
+<line x1="559" y1="709" x2="594" y2="709" class="flow-line-slow" style="stroke-width:2;"/>
+<text x="606" y="714" text-anchor="start" class="box-detail" style="font-size:13px;">CI/CD</text>
+<line x1="709" y1="709" x2="744" y2="709" class="flow-line-green" style="stroke-width:2;"/>
+<text x="756" y="714" text-anchor="start" class="box-detail" style="font-size:13px;">Data</text>
+<line x1="859" y1="709" x2="894" y2="709" class="flow-line-output" style="stroke-width:2;"/>
+<text x="906" y="714" text-anchor="start" class="box-detail" style="font-size:13px;">Query→Output</text>
+
+</svg>

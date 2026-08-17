@@ -1,0 +1,11 @@
+[
+  {"enrollment_id": "ENR001", "student_id": "STU001", "course_id": "CS101", "semester": "Spring 2026", "grade": "D", "status": "completed", "attendance_rate": 0.60},
+  {"enrollment_id": "ENR002", "student_id": "STU001", "course_id": "MATH201", "semester": "Spring 2026", "grade": "F", "status": "completed", "attendance_rate": 0.45},
+  {"enrollment_id": "ENR003", "student_id": "STU002", "course_id": "BUS101", "semester": "Spring 2026", "grade": "A-", "status": "completed", "attendance_rate": 0.92},
+  {"enrollment_id": "ENR004", "student_id": "STU002", "course_id": "CS101", "semester": "Spring 2026", "grade": "B+", "status": "completed", "attendance_rate": 0.88},
+  {"enrollment_id": "ENR005", "student_id": "STU003", "course_id": "ENG101", "semester": "Spring 2026", "grade": "D", "status": "completed", "attendance_rate": 0.55},
+  {"enrollment_id": "ENR006", "student_id": "STU003", "course_id": "MATH201", "semester": "Spring 2026", "grade": "F", "status": "completed", "attendance_rate": 0.40},
+  {"enrollment_id": "ENR007", "student_id": "STU004", "course_id": "NUR301", "semester": "Spring 2026", "grade": "A", "status": "completed", "attendance_rate": 0.98},
+  {"enrollment_id": "ENR008", "student_id": "STU005", "course_id": "LA101", "semester": "Spring 2026", "grade": "F", "status": "completed", "attendance_rate": 0.25},
+  {"enrollment_id": "ENR009", "student_id": "STU006", "course_id": "CS201", "semester": "Spring 2026", "grade": "B", "status": "completed", "attendance_rate": 0.80}
+]

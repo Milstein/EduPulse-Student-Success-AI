@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "edupulse"
+version = "1.0.0"
+description = "EduPulse - Student Success AI Platform"
+requires-python = ">=3.11"
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-cloud-aiplatform>=1.38.0",
+    "google-cloud-bigquery>=3.12.0",
+    "google-cloud-firestore>=2.13.0",
+    "google-cloud-storage>=2.10.0",
+    "google-cloud-secret-manager>=2.16.0",
+    "google-cloud-discoveryengine>=0.11.0",
+    "google-cloud-modelarmor>=0.1.0",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "pandas>=2.1.0",
+    "pyarrow>=14.0.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.5.0",
+    "agentops>=0.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.4.0",
+]
+
+[tool.agent-starter-pack]
+example_question = "What are the library hours?"
+agent_directory = "edupulse"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]

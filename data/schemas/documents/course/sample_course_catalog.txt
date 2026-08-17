@@ -1,0 +1,37 @@
+# Computer Science Course Catalog
+
+## CS 101 - Introduction to Computer Science
+- Credits: 3
+- Prerequisites: None
+- Description: Introduction to computing concepts, programming fundamentals, and computational thinking.
+- Learning Outcomes: Understand basic programming concepts, write simple programs, analyze problem-solving approaches.
+
+## CS 201 - Data Structures and Algorithms
+- Credits: 3
+- Prerequisites: CS 101, MATH 151
+- Description: Fundamental data structures (arrays, linked lists, trees, graphs) and algorithm analysis.
+- Learning Outcomes: Implement common data structures, analyze algorithm complexity, solve problems efficiently.
+
+## CS 301 - Database Systems
+- Credits: 3
+- Prerequisites: CS 201
+- Description: Database design, SQL, normalization, and transaction management.
+- Learning Outcomes: Design relational databases, write complex SQL queries, understand database optimization.
+
+## CS 350 - Operating Systems
+- Credits: 3
+- Prerequisites: CS 201, CS 250
+- Description: Process management, memory management, file systems, and concurrent programming.
+- Learning Outcomes: Understand OS internals, implement process scheduling, manage memory allocation.
+
+## CS 400 - Software Engineering
+- Credits: 3
+- Prerequisites: CS 301
+- Description: Software development lifecycle, design patterns, testing, and project management.
+- Learning Outcomes: Apply software engineering principles, work in teams, deliver production-quality software.
+
+## CS 450 - Artificial Intelligence
+- Credits: 3
+- Prerequisites: CS 301, MATH 251
+- Description: AI fundamentals, machine learning, neural networks, and natural language processing.
+- Learning Outcomes: Implement AI algorithms, understand ML frameworks, apply AI to real-world problems.

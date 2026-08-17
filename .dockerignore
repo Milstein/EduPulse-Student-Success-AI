@@ -1,0 +1,90 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+tests/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# CI/CD
+.github/
+
+# Terraform
+deploy/terraform/
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+# Docker
+.dockerignore
+Dockerfile
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary
+tmp/
+temp/
+
+# Evaluation & reports (not needed in container)
+eval/
+*.md
+
+# Linter cache
+.ruff_cache/
+
+# Architecture diagrams
+*.svg
+
+# Demo media (not needed in container)
+media/
+
+# Documentation
+README.md
+LICENSE
+CICD.md
+EVAL_PLAN.md
+SETUP.md
+
+# Data (not needed in container)
+data/
+
+# Setup files
+pyproject.toml
+.env.example
+
+# Build scripts
+deploy/

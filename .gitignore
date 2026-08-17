@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Google Cloud credentials
+service-account*.json
+*.key
+credentials.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.ruff_cache/
+
+# ADK runtime
+.adk/
+*.db
+
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+*.tfvars
+!terraform.tfvars.example
+
+# Docker config (tracked in repo)
+# .dockerignore - tracked for container build optimization
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+
+# ADK root-level agent dirs (created when running adk from project root)
+sub_agents.*/

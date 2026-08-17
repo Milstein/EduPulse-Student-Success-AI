@@ -1,0 +1,30 @@
+# Cloud Build configuration for EduPulse
+# Only builds and pushes the image. Terraform handles Cloud Run deployment.
+#
+# Usage (CI/CD): gcloud builds submit --config=deploy/cloudbuild.yaml . --project=YOUR_PROJECT_ID
+# Usage (manual): gcloud builds submit --config=deploy/cloudbuild.yaml . --project=YOUR_PROJECT_ID
+#
+# All deployment-specific values are passed as substitutions
+# (defaults shown below can be overridden with --substitutions).
+
+substitutions:
+  _IMAGE_TAG: latest
+  _REGION: us-east1
+  _REPOSITORY: edupulse
+  _SERVICE: edupulse-agent
+
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:${_IMAGE_TAG}', '-t', '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:latest', '.']
+
+  # Push the container image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '--all-tags', '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}']
+
+images:
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:${_IMAGE_TAG}'
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY

@@ -1,0 +1,147 @@
+name: EduPulse CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  REGION: ${{ vars.REGION || 'us-east1' }}
+  SERVICE_NAME: ${{ vars.SERVICE_NAME || 'edupulse-agent' }}
+  REPOSITORY_NAME: ${{ vars.REPOSITORY_NAME || 'edupulse' }}
+  MODEL_ARMOR_TEMPLATE_ID: ${{ vars.MODEL_ARMOR_TEMPLATE_ID || 'edupulse-model-armor-template' }}
+  TERRAFORM_VERSION: ${{ vars.TERRAFORM_VERSION || '1.15.8' }}
+  TF_VAR_project_id: ${{ secrets.GCP_PROJECT_ID }}
+  TF_VAR_github_repo: ${{ github.repository }}
+  TF_VAR_wif_pool_id: ${{ vars.WIF_POOL_ID || 'edupulse-gh-actions' }}
+  IMAGE_REPO: ${{ vars.REGION || 'us-east1' }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ vars.REPOSITORY_NAME || 'edupulse' }}/${{ vars.SERVICE_NAME || 'edupulse-agent' }}
+
+jobs:
+  ensure-infra:
+    needs: test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: deploy/terraform
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
+          service_account: ${{ env.SERVICE_NAME }}@${{ secrets.GCP_PROJECT_ID }}.iam.gserviceaccount.com
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+      - name: Grant required roles to SA
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          SA="serviceAccount:${{ env.SERVICE_NAME }}@${{ env.PROJECT_ID }}.iam.gserviceaccount.com"
+          for ROLE in roles/bigquery.admin roles/iam.serviceAccountAdmin; do
+            gcloud projects add-iam-policy-binding ${{ env.PROJECT_ID }} --member="$SA" --role="$ROLE" --quiet 2>/dev/null || true
+          done
+      - name: Initialize Terraform
+        run: terraform init
+      - name: Import existing resources
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          terraform import -input=false google_artifact_registry_repository.edupulse projects/${{ env.PROJECT_ID }}/locations/${{ env.REGION }}/repositories/${{ env.REPOSITORY_NAME }} || true
+          terraform import -input=false google_service_account.edupulse projects/${{ env.PROJECT_ID }}/serviceAccounts/${{ env.SERVICE_NAME }}@${{ env.PROJECT_ID }}.iam.gserviceaccount.com || true
+          terraform import -input=false google_bigquery_dataset.student_data projects/${{ env.PROJECT_ID }}/datasets/${{ vars.DATASET_STUDENT || 'edupulse_student_data' }} || true
+          terraform import -input=false google_bigquery_dataset.analytics projects/${{ env.PROJECT_ID }}/datasets/${{ vars.DATASET_ANALYTICS || 'edupulse_analytics' }} || true
+          terraform import -input=false google_model_armor_template.edupulse projects/${{ env.PROJECT_ID }}/locations/${{ env.REGION }}/templates/${{ env.MODEL_ARMOR_TEMPLATE_ID }} || true
+      - name: Run terraform plan
+        run: terraform plan -input=false
+      - name: Run terraform apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve -input=false
+
+  test:
+    runs-on: ubuntu-latest
+    # Deployment env vars are workflow-scoped, but the test job must not
+    # inherit them: setting them makes create_model_armor_guard() build a
+    # ModelArmorClient, which requires Application Default Credentials that
+    # the runner doesn't have. Override to empty so the guard returns None.
+    env:
+      PROJECT_ID: ""
+      MODEL_ARMOR_TEMPLATE_ID: ""
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest ruff
+      - name: Lint
+        run: ruff check edupulse/ tools/
+      - name: Run evals
+        run: pytest tests/ -v --tb=short
+
+  build:
+    needs: ensure-infra
+    runs-on: ubuntu-latest
+    outputs:
+      image_tag: ${{ steps.meta.outputs.image_tag }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
+          service_account: ${{ env.SERVICE_NAME }}@${{ secrets.GCP_PROJECT_ID }}.iam.gserviceaccount.com
+      - name: Setup gcloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+      - name: Build and push Docker image
+        id: meta
+        run: |
+          TAG="${{ github.sha }}"
+          gcloud builds submit \
+            --config=deploy/cloudbuild.yaml \
+            --substitutions=_IMAGE_TAG="${TAG}",_REGION=${{ env.REGION }},_REPOSITORY=${{ env.REPOSITORY_NAME }},_SERVICE=${{ env.SERVICE_NAME }} \
+            --project=${{ env.PROJECT_ID }}
+          echo "image_tag=${TAG}" >> $GITHUB_OUTPUT
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
+          service_account: ${{ env.SERVICE_NAME }}@${{ secrets.GCP_PROJECT_ID }}.iam.gserviceaccount.com
+      - name: Setup gcloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+      - name: Deploy to Cloud Run
+        run: |
+          IMAGE="${{ env.IMAGE_REPO }}:${{ needs.build.outputs.image_tag }}"
+          gcloud run deploy ${{ env.SERVICE_NAME }} \
+            --image="$IMAGE" \
+            --region=${{ env.REGION }} \
+            --project=${{ env.PROJECT_ID }} \
+            --service-account=${{ env.SERVICE_NAME }}@${{ env.PROJECT_ID }}.iam.gserviceaccount.com \
+            --memory=4Gi --cpu=2 \
+            --min-instances=0 --max-instances=10 \
+            --allow-unauthenticated \
+            --set-env-vars="PROJECT_ID=${{ env.PROJECT_ID }},GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }},AGENTOPS_API_KEY=${{ secrets.AGENTOPS_API_KEY }},MODEL_ARMOR_PROJECT_ID=${{ env.PROJECT_ID }},MODEL_ARMOR_LOCATION=${{ env.REGION }},MODEL_ARMOR_TEMPLATE_ID=${{ env.MODEL_ARMOR_TEMPLATE_ID }}"
+      - name: Get service URL
+        run: |
+          gcloud run services describe ${{ env.SERVICE_NAME }} \
+            --region=${{ env.REGION }} --project=${{ env.PROJECT_ID }} \
+            --format="value(status.url)"

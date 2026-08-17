@@ -1,0 +1,45 @@
+# Sample Student Knowledge Base Document
+
+## Registration Deadlines
+
+### Fall Semester
+- Early Registration: April 1 - May 15
+- Regular Registration: August 1 - August 20
+- Late Registration: August 21 - August 27 (with fee)
+
+### Spring Semester
+- Early Registration: November 1 - December 15
+- Regular Registration: January 5 - January 15
+- Late Registration: January 16 - January 20 (with fee)
+
+## Academic Policies
+
+### Grading Scale
+- A: 90-100%
+- B: 80-89%
+- C: 70-79%
+- D: 60-69%
+- F: Below 60%
+
+### Academic Probation
+Students are placed on academic probation when their GPA falls below 2.0.
+
+### Dean's List
+Students with a GPA of 3.5 or higher are recognized on the Dean's List each semester.
+
+## Campus Resources
+
+### Library
+- Hours: Monday-Thursday 8am-10pm, Friday 8am-6pm, Saturday 10am-4pm
+- Research assistance available
+- Study rooms available for reservation
+
+### Tutoring Center
+- Free tutoring for all students
+- Walk-in and appointment sessions available
+- Located in Student Services Building, Room 101
+
+### Counseling Services
+- Free confidential counseling
+- Appointment scheduling: (555) 123-4567
+- Crisis support available 24/7
